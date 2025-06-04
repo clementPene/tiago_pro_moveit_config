@@ -10,7 +10,7 @@
 
     <xacro:arg name="end_effector_left" default="pal-hey5"/>
     <xacro:arg name="end_effector_right" default="pal-hey5"/>
-    
+    <xacro:arg name="has_teleop_arms" default="False"/>
     <xacro:arg name="ft_sensor_left" default="rokubi"/>
     <xacro:arg name="ft_sensor_right" default="rokubi"/>
     
@@ -22,7 +22,7 @@
     <xacro:property name="end_effector_left_arg" value="$(arg end_effector_left)"/>
     <xacro:property name="end_effector_right" value="$(arg end_effector_right)"/>
     <xacro:property name="end_effector_right_arg" value="$(arg end_effector_right)"/>
-
+    <xacro:property name="has_teleop_arms" value="$(arg has_teleop_arms)"/>
     <xacro:property name="ft_sensor_left" value="$(arg ft_sensor_left)"/>
     <xacro:property name="ft_sensor_right" value="$(arg ft_sensor_right)"/>
     <xacro:property name="has_ft_sensor_left" value="${ft_sensor_left not in ['no-ft-sensor']}"/>
@@ -106,6 +106,8 @@
     <xacro:unless value="${has_arm_right}">
         <xacro:property name="config_right" value="no-arm-right"/>
     </xacro:unless>
-
+    <xacro:if value="${has_teleop_arms}">
+        <xacro:include filename="$(find tiago_pro_moveit_config)/config/srdf/teleop_arms.srdf.xacro"/>
+    </xacro:if>
     <xacro:include filename="$(find tiago_pro_moveit_config)/config/srdf/disable_collisions/${robot}_${config_left}_${config_right}.srdf.xacro" />
 </robot>
