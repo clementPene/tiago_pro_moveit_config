@@ -40,7 +40,6 @@ class LaunchArguments(LaunchArgumentsBase):
     ft_sensor_left: DeclareLaunchArgument = TiagoProArgs.ft_sensor_left
     base_type: DeclareLaunchArgument = TiagoProArgs.base_type
     has_teleop_arms: DeclareLaunchArgument = TiagoProArgs.has_teleop_arms
-    
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
     use_sensor_manager_arg: DeclareLaunchArgument = CommonArgs.use_sensor_manager
 
