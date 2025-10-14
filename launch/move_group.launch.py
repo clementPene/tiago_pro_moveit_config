@@ -123,6 +123,7 @@ def start_move_group(context, *args, **kwargs):
         'use_sim_time': LaunchConfiguration('use_sim_time'),
         'publish_robot_description_semantic': True,
         'robot_description_timeout': 60.0,
+        'capabilities': "move_group/ExecuteTaskSolutionCapability"
     }
 
     move_group_params = [
