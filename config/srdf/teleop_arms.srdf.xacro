@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <robot name="tiago_pro" xmlns:xacro="http://ros.org/wiki/xacro">
-<disable_collisions link1="arm_teleop_right_1_link" link2="arm_teleop_right_2_link" reason="Adjacent"/>
+    <disable_collisions link1="arm_teleop_right_1_link" link2="arm_teleop_right_2_link" reason="Adjacent"/>
     <disable_collisions link1="arm_teleop_right_1_link" link2="arm_teleop_right_3_link" reason="Never"/>
     <disable_collisions link1="arm_teleop_right_1_link" link2="arm_teleop_right_4_link" reason="Never"/>
     <disable_collisions link1="arm_teleop_right_1_link" link2="arm_teleop_right_5_link" reason="Never"/>
@@ -116,4 +116,11 @@
     <disable_collisions link1="wrist_teleop_right_ft_sensor_base_link" link2="wrist_teleop_right_ft_sensor_link" reason="Adjacent"/>
     <disable_collisions link1="wrist_teleop_right_ft_sensor_base_link" link2="wrist_teleop_right_ft_tool_link" reason="Adjacent"/>
     <disable_collisions link1="wrist_teleop_right_ft_sensor_link" link2="wrist_teleop_right_ft_tool_link" reason="Never"/>
+    <disable_collisions link1="wrist_teleop_right_ft_sensor_link" link2="wrist_teleop_right_ft_tool_link" reason="Never"/>
+    <disable_collisions link1="teleop_handle_right_link" link2="arm_teleop_right_7_link" reason="Never"/>
+    <disable_collisions link1="teleop_handle_left_link" link2="arm_teleop_left_7_link" reason="Never"/>
+    <disable_collisions link1="arm_teleop_right_1_link" link2="pilot_station_base_link" reason="Adjacent"/>
+    <disable_collisions link1="arm_teleop_left_1_link" link2="pilot_station_base_link" reason="Adjacent"/>
+    <disable_collisions link1="arm_teleop_right_1_link" link2="pilot_station_arm_left_link" reason="Adjacent"/>
+    <disable_collisions link1="arm_teleop_left_1_link" link2="pilot_station_arm_right_link" reason="Adjacent"/>
 </robot>
