@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.4.0 (2026-02-02)
+------------------
 * add missing config params for moveit
 * add end effectors and ft teleops arg to the move_group
 * add camera wrist collisions
