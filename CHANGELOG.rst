@@ -2,6 +2,17 @@
 Changelog for package tiago_pro_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* add missing config params for moveit
+* add end effectors and ft teleops arg to the move_group
+* add camera wrist collisions
+* clean srdf
+* fix pipeline
+* add collision ft
+* add srd for teleop
+* Contributors: ileniaperrella
+
 1.3.3 (2026-01-22)
 ------------------
 * add move_group executor plugin
