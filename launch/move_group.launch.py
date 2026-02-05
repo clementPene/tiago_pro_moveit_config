@@ -42,8 +42,6 @@ class LaunchArguments(LaunchArgumentsBase):
     has_teleop_arms: DeclareLaunchArgument = TiagoProArgs.has_teleop_arms
     use_sim_time: DeclareLaunchArgument = CommonArgs.use_sim_time
     use_sensor_manager_arg: DeclareLaunchArgument = CommonArgs.use_sensor_manager
-    end_effector_teleop_left: DeclareLaunchArgument = TiagoProArgs.end_effector_teleop_left
-    end_effector_teleop_right: DeclareLaunchArgument = TiagoProArgs.end_effector_teleop_right
     ft_sensor_teleop_left: DeclareLaunchArgument = TiagoProArgs.ft_sensor_teleop_left
     ft_sensor_teleop_right: DeclareLaunchArgument = TiagoProArgs.ft_sensor_teleop_right
 
@@ -92,8 +90,6 @@ def start_move_group(context, *args, **kwargs):
         'ft_sensor_left': read_launch_argument('ft_sensor_left', context),
         "base_type": read_launch_argument("base_type", context),
         'has_teleop_arms': read_launch_argument('has_teleop_arms', context),
-        'end_effector_teleop_left': read_launch_argument('end_effector_teleop_left', context),
-        'end_effector_teleop_right': read_launch_argument('end_effector_teleop_right', context),
         'ft_sensor_teleop_left': read_launch_argument('ft_sensor_teleop_left', context),
         'ft_sensor_teleop_right': read_launch_argument('ft_sensor_teleop_right', context),
     }
