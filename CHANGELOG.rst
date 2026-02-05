@@ -2,8 +2,8 @@
 Changelog for package tiago_pro_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.4.1 (2026-02-05)
+------------------
 * delete teleop end effector
 * Contributors: ileniaperrella
 
