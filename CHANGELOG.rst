@@ -2,6 +2,11 @@
 Changelog for package tiago_pro_moveit_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add support for short-wrist
+* Contributors: Noel Jimenez
+
 1.4.1 (2026-02-05)
 ------------------
 * delete teleop end effector
