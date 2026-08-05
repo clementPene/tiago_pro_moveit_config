@@ -4,4 +4,10 @@
     <disable_collisions link1="wrist_right_ft_sensor_base_link" link2="wrist_right_ft_sensor_link" reason="Adjacent"/>
     <disable_collisions link1="wrist_right_ft_sensor_base_link" link2="wrist_right_ft_tool_link" reason="Adjacent"/>
     <disable_collisions link1="wrist_right_ft_sensor_link" link2="wrist_right_ft_tool_link" reason="Never"/>
+
+    <!-- with_sc simplified capsule link (arm_right_7_link_sc), mirroring the
+         ft-sensor-related disable_collisions pairs of its real link counterpart -->
+    <disable_collisions link1="arm_right_7_link_sc" link2="wrist_right_ft_sensor_base_link" reason="Never"/>
+    <disable_collisions link1="arm_right_7_link_sc" link2="wrist_right_ft_sensor_link" reason="Never"/>
+    <disable_collisions link1="arm_right_7_link_sc" link2="wrist_right_ft_tool_link" reason="Never"/>
 </robot>
