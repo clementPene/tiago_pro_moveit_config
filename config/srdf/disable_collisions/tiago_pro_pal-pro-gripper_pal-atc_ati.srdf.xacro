@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<robot name="tiago_pro" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- ft_sensor_right=ati resolves config_right to "pal-atc_ati" (see tiago_pro.srdf.xacro),
+       but the ATI F/T sensor's disable_collisions pairs are already included directly in
+       tiago_pro_pal-pro-gripper_pal-atc.srdf.xacro (see its comment near arm_right_7_link_sc /
+       wrist_right_ft_sensor_*), so this variant simply reuses it. -->
+  <xacro:include filename="$(find tiago_pro_moveit_config)/config/srdf/disable_collisions/tiago_pro_pal-pro-gripper_pal-atc.srdf.xacro" />
+</robot>

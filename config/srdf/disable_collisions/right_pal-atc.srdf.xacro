@@ -1,6 +1,73 @@
 <?xml version="1.0" ?>
 <robot name="tiago_pro" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find tiago_pro_moveit_config)/config/srdf/disable_collisions/right_pal-pro-gripper.srdf.xacro" />
     <disable_collisions link1="gripper_right_pal_atc_base_link" link2="gripper_right_tool_holder" reason="Never"/>
     <disable_collisions link1="gripper_right_pal_atc_base_link" link2="gripper_right_tool_mount" reason="Adjacent"/>
     <disable_collisions link1="gripper_right_tool_holder" link2="gripper_right_tool_mount" reason="Adjacent"/>
+
+    <!-- pal-pro-gripper tool mounted through the ATC tool changer: gripper_right_base_link
+         attaches at the ATC's tool_mount interface -->
+    <disable_collisions link1="gripper_right_tool_mount" link2="gripper_right_base_link" reason="Adjacent"/>
+    <disable_collisions link1="gripper_right_pal_atc_base_link" link2="gripper_right_base_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_tool_holder" link2="gripper_right_base_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_tool_mount" link2="gripper_right_fingertip_left_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_tool_mount" link2="gripper_right_fingertip_right_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_tool_mount" link2="gripper_right_inner_finger_left_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_tool_mount" link2="gripper_right_inner_finger_right_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_tool_mount" link2="gripper_right_outer_finger_left_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_tool_mount" link2="gripper_right_outer_finger_right_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_tool_mount" link2="gripper_right_base_finger_left_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_tool_mount" link2="gripper_right_base_finger_right_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_pal_atc_base_link" link2="gripper_right_base_finger_left_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_pal_atc_base_link" link2="gripper_right_base_finger_right_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_tool_holder" link2="gripper_right_base_finger_left_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_tool_holder" link2="gripper_right_base_finger_right_link" reason="Never"/>
+
+    <!-- wrist_right_ft_sensor_* (ATI F/T sensor): this fork has no dedicated
+         right_pal-atc_ati.srdf.xacro/right_pal-atc_rokubi.srdf.xacro variants like the other
+         end-effectors do, so these entries live here directly and apply regardless of
+         ft_sensor_right. Moved from tiago_pro_no-arm-left_pal-atc.srdf.xacro so any future
+         left-arm combo with a pal-atc right arm inherits them too.
+         Base physical adjacency between the sensor's own links, mirroring
+         right_no-ee_ati.srdf.xacro -->
+    <disable_collisions link1="wrist_right_ft_sensor_base_link" link2="wrist_right_ft_sensor_link" reason="Adjacent"/>
+    <disable_collisions link1="wrist_right_ft_sensor_base_link" link2="wrist_right_ft_tool_link" reason="Adjacent"/>
+    <disable_collisions link1="wrist_right_ft_sensor_link" link2="wrist_right_ft_tool_link" reason="Never"/>
+
+    <!-- arm_right_7_link_sc capsule is adjacent to the F/T sensor stack, same as the
+         gripper links above -->
+    <disable_collisions link1="arm_right_7_link_sc" link2="wrist_right_ft_sensor_base_link" reason="Never"/>
+    <disable_collisions link1="arm_right_7_link_sc" link2="wrist_right_ft_sensor_link" reason="Never"/>
+    <disable_collisions link1="arm_right_7_link_sc" link2="wrist_right_ft_tool_link" reason="Never"/>
+
+    <!-- real arm_right_*_link vs the F/T sensor stack, ported from
+         tiago_pro_no-arm-left_no-ee_ati.srdf.xacro (same right_no-ee_ati.srdf.xacro base) -->
+    <disable_collisions link1="arm_right_1_link" link2="wrist_right_ft_sensor_base_link" reason="Never"/>
+    <disable_collisions link1="arm_right_1_link" link2="wrist_right_ft_sensor_link" reason="Never"/>
+    <disable_collisions link1="arm_right_1_link" link2="wrist_right_ft_tool_link" reason="Never"/>
+    <disable_collisions link1="arm_right_2_link" link2="wrist_right_ft_sensor_base_link" reason="Never"/>
+    <disable_collisions link1="arm_right_2_link" link2="wrist_right_ft_sensor_link" reason="Never"/>
+    <disable_collisions link1="arm_right_2_link" link2="wrist_right_ft_tool_link" reason="Never"/>
+    <disable_collisions link1="arm_right_3_link" link2="wrist_right_ft_sensor_base_link" reason="Never"/>
+    <disable_collisions link1="arm_right_3_link" link2="wrist_right_ft_sensor_link" reason="Never"/>
+    <disable_collisions link1="arm_right_3_link" link2="wrist_right_ft_tool_link" reason="Never"/>
+    <disable_collisions link1="arm_right_4_link" link2="wrist_right_ft_sensor_base_link" reason="Never"/>
+    <disable_collisions link1="arm_right_4_link" link2="wrist_right_ft_sensor_link" reason="Never"/>
+    <disable_collisions link1="arm_right_4_link" link2="wrist_right_ft_tool_link" reason="Never"/>
+    <disable_collisions link1="arm_right_5_link" link2="wrist_right_ft_tool_link" reason="Never"/>
+    <disable_collisions link1="arm_right_6_link" link2="wrist_right_ft_sensor_base_link" reason="Never"/>
+    <disable_collisions link1="arm_right_6_link" link2="wrist_right_ft_sensor_link" reason="Default"/>
+    <disable_collisions link1="arm_right_6_link" link2="wrist_right_ft_tool_link" reason="Never"/>
+    <disable_collisions link1="arm_right_7_link" link2="wrist_right_ft_sensor_base_link" reason="Never"/>
+    <disable_collisions link1="arm_right_7_link" link2="wrist_right_ft_sensor_link" reason="Default"/>
+    <disable_collisions link1="arm_right_7_link" link2="wrist_right_ft_tool_link" reason="Never"/>
+    <disable_collisions link1="arm_right_tool_link" link2="wrist_right_ft_sensor_base_link" reason="Adjacent"/>
+    <disable_collisions link1="arm_right_tool_link" link2="wrist_right_ft_sensor_link" reason="Never"/>
+    <disable_collisions link1="arm_right_tool_link" link2="wrist_right_ft_tool_link" reason="Never"/>
+
+    <!-- gripper_right_pal_atc_base_link is mounted right below the F/T sensor stack on
+         the wrist, same adjacency as with the arm_right_7_link(_sc) pairs above -->
+    <disable_collisions link1="gripper_right_pal_atc_base_link" link2="wrist_right_ft_sensor_base_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_pal_atc_base_link" link2="wrist_right_ft_sensor_link" reason="Never"/>
+    <disable_collisions link1="gripper_right_pal_atc_base_link" link2="wrist_right_ft_tool_link" reason="Adjacent"/>
 </robot>
